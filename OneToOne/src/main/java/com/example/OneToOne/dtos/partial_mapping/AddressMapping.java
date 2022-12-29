@@ -8,12 +8,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 
-// Java Program to illustrate Difference Between
-// Singleton Pattern vs Static Class.
 
-// Here illustrating Singleton Pattern
 
-// Importing input output classes
+
+
+
+
 @Component
 public class AddressMapping {
     private static final ModelMapper modelMapper = new ModelMapper();
