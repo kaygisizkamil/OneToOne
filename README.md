@@ -12,7 +12,7 @@
         @OneToOne(cascade = CascadeType.PERSIST,mappedBy = "addres",fetch = FetchType.LAZY)
         private Kullanici kullanici;
 
-} ```
+} 
 
 - ```public class Kullanici {// it means user spring did not let me give that name
 
@@ -26,4 +26,4 @@
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Addres addres;
 
-} ```
+} 
