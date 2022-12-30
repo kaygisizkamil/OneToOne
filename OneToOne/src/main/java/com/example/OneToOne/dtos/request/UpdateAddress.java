@@ -5,8 +5,6 @@ import lombok.Data;
 
 @Data
 public class UpdateAddress {
-    @JsonIgnore
-    Long id;
     private String street;
     private String zipCode;
 }

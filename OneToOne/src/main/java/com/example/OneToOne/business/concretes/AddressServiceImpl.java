@@ -2,7 +2,6 @@ package com.example.OneToOne.business.concretes;
 
 import com.example.OneToOne.business.abstracts.AddressService;
 import com.example.OneToOne.domain.Addres;
-import com.example.OneToOne.dtos.AddressDTO;
 import com.example.OneToOne.dtos.partial_mapping.AddressMapping;
 import com.example.OneToOne.dtos.request.AddAddres;
 import com.example.OneToOne.dtos.request.UpdateAddress;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,19 +49,21 @@ public class AddressServiceImpl implements AddressService {
     }
     return getAddresses; they are same*/
             }
-            @Transactional
-        @Override
-        public UpdateAddress updateAddress(Long id, UpdateAddress updateAddress) {
-            Addres addres = addressRepository.findById(id).orElse(null);
-            if (addres == null) {
-                return null;
-            }
-            addres =addressMapping.convertAddressDTOToEntity(updateAddress);
-            return addressMapping.convertUpdateAddressEntityToDto(addres);
+
+    @Transactional
+    @Override
+    public UpdateAddress updateAddress(Long id, UpdateAddress updateAddress) {
+        Addres addres = addressRepository.findById(id).orElse(null);
+        if (addres == null) {
+            return null;
         }
+        addres.setStreet(updateAddress.getStreet());
+        addres.setZipCode(updateAddress.getZipCode());
+        this.addressRepository.save(addres);
+        return addressMapping.convertUpdateAddressEntityToDto(addres);
+    }
         @Override
         public void deleteAddress(Long id) {
             addressRepository.deleteById(id);
-            this.addressRepository.flush();
         }
     }

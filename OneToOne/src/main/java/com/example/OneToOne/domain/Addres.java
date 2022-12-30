@@ -20,7 +20,7 @@ public class Addres {
         private String street;
         private String zipCode;
 
-        @OneToOne(mappedBy = "addres")
+        @OneToOne(cascade = CascadeType.PERSIST,mappedBy = "addres",fetch = FetchType.LAZY)
         private Kullanici kullanici;
 
 

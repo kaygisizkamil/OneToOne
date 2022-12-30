@@ -7,13 +7,6 @@ import com.example.OneToOne.dtos.responses.GetAddress;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
-
-
-
-
-
-
-
 @Component
 public class AddressMapping {
     private static final ModelMapper modelMapper = new ModelMapper();
