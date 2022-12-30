@@ -1,7 +1,8 @@
 # OneToOne
 - ![image](https://user-images.githubusercontent.com/96066271/210025211-d3939059-b820-499c-8f54-54e540e4633d.png)
 # Entities
-- ``` public class Addres {
+- ```
+-  public class Addres {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id")
@@ -14,7 +15,8 @@
 
 } 
 
-- ```public class Kullanici {// it means user spring did not let me give that name
+- ```
+ public class Kullanici {// it means user spring did not let me give that name
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
